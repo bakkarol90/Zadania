@@ -1,13 +1,31 @@
 package org.example;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
+class Wezel
+{
+    int data;
+    Wezel lewy, prawy;
+
+    public Wezel(int item)
+    {
+        data = item;
+        lewy = prawy = null;
+    }
+}
 
 public class Zadanie3 {
-int licznik;
+    //Root of the Binary Tree
+    Wezel korzen;
+
+    int getLeafCount() {
+        return getLeafCount(korzen);
+    }
+
+    int getLeafCount(Wezel wezel) {
+        if (wezel == null)
+            return 0;
+        if (wezel.lewy == null && wezel.prawy == null)
+            return 1;
+        else
+            return getLeafCount(wezel.lewy) + getLeafCount(wezel.prawy);
+    }
 }

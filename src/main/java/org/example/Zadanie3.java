@@ -13,7 +13,7 @@ class Wezel
 }
 
 public class Zadanie3 {
-    //Root of the Binary Tree
+
     Wezel korzen;
 
     int getLeafCount() {
